@@ -1,0 +1,17 @@
+<h2>Total registrations</h2>
+<div>
+
+{% if regforms %}
+    <ul>
+    {% for i in regforms %}
+        <li>{{ i }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No applications are available.</p>
+{% endif %}
+
+{{context}}
+
+
+</div>

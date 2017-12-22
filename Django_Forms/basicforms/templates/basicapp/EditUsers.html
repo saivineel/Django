@@ -1,0 +1,32 @@
+{%extends "Base.html"%}
+
+{% block body_block %}
+
+{% if UsersList %}
+          <table border='2'>
+            <thead>
+              <th>Name</th>
+              <th>EmpId</th>
+			  <th>Email</th>
+			  <th>City</th>
+			  <th>Action</th>
+            </thead>
+
+            {% for User in UsersList %}
+              <tr>
+                <td>{{ User.Name }}</td>
+				<td>{{ User.EmpId }}</td>
+				<td>{{ User.Email }}</td>
+				<td>{{ User.City }}</td>
+				
+				<td><a href='/basicapp/delete/{{User.id}}/' >Delete</a></td>
+              </tr>
+            {% endfor %}
+        </table>
+
+ {% else %}
+        <p>No Records. Table Not Created.</p>
+ {% endif %}
+	
+{% endblock %}
+
